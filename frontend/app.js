@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Error initializing 3D scene:', err);
   }
 
+  // Initialize In-Browser ML Engine for Standalone / GitHub Pages deployment
+  let inBrowserEngine = null;
+  if (typeof InBrowserMLEngine !== 'undefined') {
+    inBrowserEngine = new InBrowserMLEngine();
+    inBrowserEngine.loadModel('model_weights.json').then(loaded => {
+      if (loaded) {
+        console.log('AegisMail: In-browser ML engine loaded successfully.');
+      }
+    });
+  }
+
   // 2. DOM Elements
   const emailForm = document.getElementById('emailForm');
   const senderInput = document.getElementById('senderInput');
@@ -84,6 +95,49 @@ document.addEventListener('DOMContentLoaded', () => {
     holoStatusText.textContent = "Aegis Core Active";
   }
 
+  // 8. Preset Quick Demos
+  const PRESET_DATA = {
+    lottery: {
+      subject: "CONGRATULATIONS! You won $1,000,000 cash prize!",
+      body: "CONGRATULATIONS! You have been selected as the lucky winner of our $1,000,000 international lottery prize! To claim your cash reward, click the link below and fill in your banking details immediately.",
+      sender: "claims@global-lottery-awards.com"
+    },
+    leetspeak: {
+      subject: "Fr33 Gift C@rd Claim",
+      body: "C0ngr@tul@ti0ns! U r selected for a fr33 $1,000 gift c@rd. Click here tO cl@im nOw.",
+      sender: "reward@special-promotions.net"
+    },
+    pharma: {
+      subject: "Special Order Notice",
+      body: "Get cheap prescriptions online without a doctor note. [Separate Section Below] Note: The information contained in this internal academic research memo is strictly confidential and intended solely for the project team review regarding the upcoming corporate budget synchronization.",
+      sender: "discount-pharmacy@meds-fast.org"
+    },
+    drive: {
+      subject: "Updated Property Details",
+      body: 'Hey, I found that document you asked for regarding the property details. Everything is updated on the drive link here for you to look over whenever you get a minute."',
+      sender: "alex.realtor@gmail.com"
+    },
+    legit: {
+      subject: "Project sync tomorrow & sprint review",
+      body: "Hi team, thanks for attending today's project review. Attached are the updated slides and action items for next week. Please review before our sync on Friday.",
+      sender: "sarah.manager@company.com"
+    }
+  };
+
+  document.querySelectorAll('.preset-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pKey = btn.dataset.preset;
+      const data = PRESET_DATA[pKey];
+      if (data) {
+        subjectInput.value = data.subject;
+        bodyInput.value = data.body;
+        senderInput.value = data.sender;
+        updateCharCount();
+        triggerAnalyze();
+      }
+    });
+  });
+
   // 9. Form Submission
   emailForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -111,24 +165,33 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
+      // 1. Attempt backend API first
       const response = await fetch('/api/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => null);
-        const detail = errorData && errorData.detail ? errorData.detail : 'Server returned an error.';
-        throw new Error(detail);
+      if (response.ok) {
+        const data = await response.json();
+        renderResult(data);
+        return;
       }
-      const data = await response.json();
-      renderResult(data);
+      throw new Error(`Server status ${response.status}`);
     } catch (err) {
-      console.error('Prediction API error:', err);
-      showError('Unable to analyze the email right now. Please ensure the backend server is running and try again.');
-      if (scene3D) scene3D.updateState('Idle');
-      holoStatusText.textContent = "Backend Unavailable";
+      // 2. Seamless fallback to in-browser ML engine (for GitHub Pages & offline)
+      if (inBrowserEngine && inBrowserEngine.isLoaded) {
+        console.info('AegisMail: Running inference via in-browser ML engine.');
+        const localResult = inBrowserEngine.predict(
+          payload.subject, payload.body, payload.sender, payload.num_attachments
+        );
+        renderResult(localResult);
+      } else {
+        console.error('Prediction error:', err);
+        showError('Unable to analyze email right now. Please ensure ML model is loaded.');
+        if (scene3D) scene3D.updateState('Idle');
+        holoStatusText.textContent = "Engine Unavailable";
+      }
     } finally {
       setLoading(false);
     }
@@ -243,12 +306,17 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch('/api/health');
       if (res.ok) {
-        connectionStatus.textContent = "ML Engine Live (TF-IDF)";
-      } else {
-        connectionStatus.textContent = "Backend Error";
+        connectionStatus.textContent = "ML Engine Live (FastAPI)";
+        return;
       }
     } catch {
-      connectionStatus.textContent = "Backend Offline";
+      // Static host like GitHub Pages
+    }
+    // Check client engine
+    if (inBrowserEngine) {
+      connectionStatus.textContent = "ML Engine Live (Web ML)";
+    } else {
+      connectionStatus.textContent = "Offline Mode";
     }
   }
 
