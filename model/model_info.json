@@ -1,0 +1,18 @@
+{
+  "classes": {
+    "0": "Legitimate",
+    "1": "Scam"
+  },
+  "model_type": "LogisticRegression (balanced, regularized C=1.0)",
+  "features": "FeatureUnion: Word TF-IDF (1-2 ngrams, 40k) + Subword Char_wb TF-IDF (3-5 ngrams, 25k)",
+  "preprocessing": "Canonicalization & Leetspeak Normalization + Multi-segment Anti-Poisoning Evaluation",
+  "dataset": "E:\\LEARNING ML\\datasets\\email_classification_1M.csv + Adversarial Augmentations",
+  "train_samples": 255040,
+  "defenses": [
+    "Adversarial Leetspeak & Obfuscation Evasion Defense",
+    "Bayesian Poisoning & Ham Word Stuffing Defense",
+    "Fake Shared Document / Cloud Storage Phishing Lures Defense",
+    "Unlicensed Pharmacy & Prescription Spam Defense"
+  ],
+  "validation_passed": "10/10 test cases passed"
+}
