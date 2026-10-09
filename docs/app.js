@@ -95,50 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     holoStatusText.textContent = "Aegis Core Active";
   }
 
-  // 8. Preset Quick Demos
-  const PRESET_DATA = {
-    lottery: {
-      subject: "CONGRATULATIONS! You won $1,000,000 cash prize!",
-      body: "CONGRATULATIONS! You have been selected as the lucky winner of our $1,000,000 international lottery prize! To claim your cash reward, click the link below and fill in your banking details immediately.",
-      sender: "claims@global-lottery-awards.com"
-    },
-    leetspeak: {
-      subject: "Fr33 Gift C@rd Claim",
-      body: "C0ngr@tul@ti0ns! U r selected for a fr33 $1,000 gift c@rd. Click here tO cl@im nOw.",
-      sender: "reward@special-promotions.net"
-    },
-    pharma: {
-      subject: "Special Order Notice",
-      body: "Get cheap prescriptions online without a doctor note. [Separate Section Below] Note: The information contained in this internal academic research memo is strictly confidential and intended solely for the project team review regarding the upcoming corporate budget synchronization.",
-      sender: "discount-pharmacy@meds-fast.org"
-    },
-    drive: {
-      subject: "Updated Property Details",
-      body: 'Hey, I found that document you asked for regarding the property details. Everything is updated on the drive link here for you to look over whenever you get a minute."',
-      sender: "alex.realtor@gmail.com"
-    },
-    legit: {
-      subject: "Project sync tomorrow & sprint review",
-      body: "Hi team, thanks for attending today's project review. Attached are the updated slides and action items for next week. Please review before our sync on Friday.",
-      sender: "sarah.manager@company.com"
-    }
-  };
-
-  document.querySelectorAll('.preset-pill').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const pKey = btn.dataset.preset;
-      const data = PRESET_DATA[pKey];
-      if (data) {
-        subjectInput.value = data.subject;
-        bodyInput.value = data.body;
-        senderInput.value = data.sender;
-        updateCharCount();
-        triggerAnalyze();
-      }
-    });
-  });
-
-  // 9. Form Submission
+  // 8. Form Submission
   emailForm.addEventListener('submit', (e) => {
     e.preventDefault();
     triggerAnalyze();
@@ -342,5 +299,13 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
       });
     });
+  }
+
+  // 13. Brand Writing Animation Completion Handler
+  const brandTitle = document.querySelector('.brand-title');
+  if (brandTitle) {
+    setTimeout(() => {
+      brandTitle.classList.add('is-written');
+    }, 1800);
   }
 });
