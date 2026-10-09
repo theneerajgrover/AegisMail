@@ -190,6 +190,8 @@ body {
   border-radius: 50%;
   background-color: var(--safe);
   box-shadow: 0 0 10px var(--safe);
+}
+
 .header-right {
   display: flex;
   align-items: center;
