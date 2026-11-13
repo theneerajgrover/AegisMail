@@ -1,204 +1,310 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460">
   <defs>
-    <!-- Background gradient -->
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#060a14"/>
-      <stop offset="50%" stop-color="#0a1025"/>
-      <stop offset="100%" stop-color="#090d16"/>
+    <!-- Background Gradients -->
+    <linearGradient id="heroBg" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#040711"/>
+      <stop offset="45%" stop-color="#080e21"/>
+      <stop offset="80%" stop-color="#060b18"/>
+      <stop offset="100%" stop-color="#03050c"/>
     </linearGradient>
-    <!-- Shield gradient -->
-    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="60%" stop-color="#4f46e5"/>
-      <stop offset="100%" stop-color="#0284c7"/>
-    </linearGradient>
-    <!-- Cyan glow -->
-    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+
+    <radialGradient id="nebulaCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
     </radialGradient>
-    <!-- Indigo glow -->
-    <radialGradient id="indigoGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
+
+    <radialGradient id="nebulaIndigo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#6366f1" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
     </radialGradient>
-    <!-- Scan beam gradient -->
-    <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#06b6d4" stop-opacity="0.6"/>
-      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.6"/>
+
+    <radialGradient id="nebulaEmerald" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Metallic & Hologram Gradients -->
+    <linearGradient id="shieldMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4338ca"/>
+      <stop offset="30%" stop-color="#6366f1"/>
+      <stop offset="70%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <linearGradient id="shieldRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <linearGradient id="mailSurface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+
+    <linearGradient id="laserBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#06b6d4" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="65%" stop-color="#6366f1" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
     </linearGradient>
-    <!-- Envelope body gradient -->
-    <linearGradient id="envGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#0f172a"/>
+
+    <linearGradient id="hudGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.8"/>
     </linearGradient>
-    <!-- Title shimmer -->
-    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="45%" stop-color="#e2e8f0"/>
-      <stop offset="55%" stop-color="#06b6d4"/>
-      <stop offset="100%" stop-color="#6366f1"/>
-    </linearGradient>
-    <!-- Grid pattern -->
-    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="0.75"/>
     </pattern>
-    <!-- Shield glow filter -->
-    <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+
+    <!-- Glow & Blur Filters -->
+    <filter id="bloomIntense" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="3" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-    <!-- Soft glow -->
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+
+    <filter id="bloomSubtle" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-    <!-- Large ambient glow -->
-    <filter id="ambientGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="20"/>
-    </filter>
-    <!-- Particle glow -->
-    <filter id="particleGlow" x="-200%" y="-200%" width="500%" height="500%">
-      <feGaussianBlur stdDeviation="2"/>
+
+    <filter id="ambientBlur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="28"/>
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1000" height="400" fill="url(#bgGrad)"/>
-  <rect width="1000" height="400" fill="url(#gridPattern)"/>
+  <!-- 1. Background Fill & Cyber Grid -->
+  <rect width="1000" height="460" fill="url(#heroBg)"/>
+  <rect width="1000" height="460" fill="url(#cyberGrid)"/>
 
-  <!-- Ambient glow orbs -->
-  <ellipse cx="300" cy="200" rx="200" ry="150" fill="url(#indigoGlow)" filter="url(#ambientGlow)" opacity="0.5">
-    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="6s" repeatCount="indefinite"/>
+  <!-- Perspective Horizon Grid Lines -->
+  <g opacity="0.18">
+    <line x1="0" y1="410" x2="1000" y2="410" stroke="#06b6d4" stroke-width="0.5"/>
+    <line x1="0" y1="425" x2="1000" y2="425" stroke="#6366f1" stroke-width="0.7"/>
+    <line x1="0" y1="445" x2="1000" y2="445" stroke="#06b6d4" stroke-width="1"/>
+    <!-- Angled Perspective Lines converging to center -->
+    <line x1="100" y1="460" x2="420" y2="390" stroke="#06b6d4" stroke-width="0.6"/>
+    <line x1="250" y1="460" x2="460" y2="390" stroke="#06b6d4" stroke-width="0.6"/>
+    <line x1="750" y1="460" x2="540" y2="390" stroke="#6366f1" stroke-width="0.6"/>
+    <line x1="900" y1="460" x2="580" y2="390" stroke="#6366f1" stroke-width="0.6"/>
+  </g>
+
+  <!-- 2. Ambient Nebula Flares -->
+  <ellipse cx="280" cy="220" rx="260" ry="170" fill="url(#nebulaIndigo)" filter="url(#ambientBlur)">
+    <animate attributeName="opacity" values="0.35;0.65;0.35" dur="7s" repeatCount="indefinite"/>
   </ellipse>
-  <ellipse cx="700" cy="200" rx="180" ry="140" fill="url(#cyanGlow)" filter="url(#ambientGlow)" opacity="0.4">
-    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="7s" repeatCount="indefinite"/>
+  <ellipse cx="720" cy="210" rx="240" ry="160" fill="url(#nebulaCyan)" filter="url(#ambientBlur)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="500" cy="240" rx="190" ry="130" fill="url(#nebulaEmerald)" filter="url(#ambientBlur)">
+    <animate attributeName="opacity" values="0.15;0.4;0.15" dur="6s" repeatCount="indefinite"/>
   </ellipse>
 
-  <!-- Floating particles - left cluster -->
-  <g filter="url(#particleGlow)">
-    <circle cx="120" cy="80" r="1.5" fill="#06b6d4" opacity="0.6">
-      <animate attributeName="cy" values="80;70;80" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+  <!-- 3. Floating Ambient Micro-Particles -->
+  <g opacity="0.65">
+    <circle cx="85" cy="110" r="1.5" fill="#38bdf8">
+      <animate attributeName="cy" values="110;95;110" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="180" cy="120" r="1" fill="#6366f1" opacity="0.5">
-      <animate attributeName="cy" values="120;108;120" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="5s" repeatCount="indefinite"/>
+    <circle cx="150" cy="280" r="1.2" fill="#818cf8">
+      <animate attributeName="cy" values="280;268;280" dur="5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="140" cy="300" r="1.2" fill="#06b6d4" opacity="0.4">
-      <animate attributeName="cy" values="300;288;300" dur="6s" repeatCount="indefinite"/>
+    <circle cx="210" cy="75" r="1" fill="#38bdf8">
+      <animate attributeName="cy" values="75;68;75" dur="3.8s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="90" cy="250" r="0.8" fill="#6366f1" opacity="0.3">
-      <animate attributeName="cy" values="250;240;250" dur="3.5s" repeatCount="indefinite"/>
+    <circle cx="890" cy="130" r="1.8" fill="#38bdf8">
+      <animate attributeName="cy" values="130;116;130" dur="5.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="5.2s" repeatCount="indefinite"/>
     </circle>
-    <!-- Right particles -->
-    <circle cx="850" cy="90" r="1.2" fill="#6366f1" opacity="0.5">
-      <animate attributeName="cy" values="90;78;90" dur="5.5s" repeatCount="indefinite"/>
+    <circle cx="820" cy="310" r="1.4" fill="#34d399">
+      <animate attributeName="cy" values="310;298;310" dur="4s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="900" cy="280" r="1" fill="#06b6d4" opacity="0.4">
-      <animate attributeName="cy" values="280;270;280" dur="4.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="820" cy="320" r="1.5" fill="#10b981" opacity="0.3">
-      <animate attributeName="cy" values="320;310;320" dur="6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="870" cy="160" r="0.8" fill="#06b6d4" opacity="0.4">
-      <animate attributeName="cy" values="160;150;160" dur="3.8s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Center-area particles -->
-    <circle cx="380" cy="100" r="1" fill="#06b6d4" opacity="0.3">
-      <animate attributeName="cy" values="100;90;100" dur="4.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="620" cy="310" r="1.2" fill="#6366f1" opacity="0.35">
-      <animate attributeName="cy" values="310;298;310" dur="5.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="450" cy="340" r="0.9" fill="#10b981" opacity="0.25">
-      <animate attributeName="cy" values="340;332;340" dur="3.6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="550" cy="65" r="1.1" fill="#06b6d4" opacity="0.3">
-      <animate attributeName="cy" values="65;55;65" dur="4.8s" repeatCount="indefinite"/>
+    <circle cx="930" cy="260" r="1.1" fill="#818cf8">
+      <animate attributeName="cy" values="260;250;260" dur="6s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- Orbital ring 1 (tilted ellipse) -->
-  <ellipse cx="500" cy="200" rx="220" ry="70" fill="none" stroke="#6366f1" stroke-width="0.6" stroke-dasharray="6 8" opacity="0.25" transform="rotate(-15,500,200)">
-    <animateTransform attributeName="transform" type="rotate" values="-15,500,200;345,500,200" dur="30s" repeatCount="indefinite"/>
-  </ellipse>
+  <!-- 4. Left HUD Telemetry Console -->
+  <g transform="translate(60, 140)">
+    <!-- Terminal Outer Frame -->
+    <path d="M 0 0 L 190 0 L 210 20 L 210 160 L 190 180 L 0 180 Z" fill="rgba(10, 16, 32, 0.65)" stroke="rgba(6, 182, 212, 0.28)" stroke-width="1"/>
+    <path d="M 0 0 L 35 0" stroke="#06b6d4" stroke-width="2.5"/>
+    <path d="M 0 0 L 0 35" stroke="#06b6d4" stroke-width="2.5"/>
+    <path d="M 210 145 L 210 160 L 190 180 L 175 180" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
 
-  <!-- Orbital ring 2 -->
-  <ellipse cx="500" cy="200" rx="190" ry="90" fill="none" stroke="#06b6d4" stroke-width="0.5" stroke-dasharray="4 10" opacity="0.2" transform="rotate(25,500,200)">
-    <animateTransform attributeName="transform" type="rotate" values="25,500,200;-335,500,200" dur="25s" repeatCount="indefinite"/>
-  </ellipse>
+    <!-- Header Tag -->
+    <rect x="12" y="10" width="8" height="8" rx="1" fill="#06b6d4"/>
+    <text x="26" y="18" font-family="'JetBrains Mono', 'Segoe UI Mono', monospace" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1.5">CORE_TELEMETRY</text>
+    <line x1="12" y1="26" x2="195" y2="26" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
 
-  <!-- Central composition group with float animation -->
-  <g transform="translate(500,195)">
-    <animateTransform attributeName="transform" type="translate" values="500,195;500,188;500,195" dur="5s" repeatCount="indefinite"/>
+    <!-- Telemetry Lines -->
+    <text x="14" y="46" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">SYS_STATUS</text>
+    <text x="14" y="58" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#10b981">ONLINE // ACTIVE</text>
 
-    <!-- Shield outline (outer glow) -->
-    <path d="M0,-72 L48,-48 V10 C48,50 24,68 0,78 C-24,68 -48,50 -48,10 V-48 Z" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.3" filter="url(#softGlow)">
-      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="4s" repeatCount="indefinite"/>
-    </path>
+    <text x="14" y="80" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">INFERENCE_ROUTING</text>
+    <text x="14" y="92" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8">DUAL-ENGINE AUTO</text>
 
-    <!-- Shield body -->
-    <path d="M0,-62 L42,-40 V8 C42,42 22,58 0,67 C-22,58 -42,42 -42,8 V-40 Z" fill="url(#shieldGrad)" opacity="0.85" filter="url(#glowFilter)">
-      <animate attributeName="opacity" values="0.8;0.95;0.8" dur="3s" repeatCount="indefinite"/>
-    </path>
+    <text x="14" y="114" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">ADVERSARIAL_DEFENSE</text>
+    <text x="14" y="126" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#818cf8">MULTI-SCALE POOL</text>
 
-    <!-- Shield inner depth -->
-    <path d="M0,-52 L34,-34 V6 C34,34 18,48 0,55 C-18,48 -34,34 -34,6 V-34 Z" fill="rgba(0,0,0,0.2)"/>
+    <text x="14" y="148" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">DATA_RETENTION</text>
+    <text x="14" y="160" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#f43f5e">ZERO // STATELESS</text>
 
-    <!-- Envelope body (inside shield) -->
-    <rect x="-28" y="-16" width="56" height="36" rx="3" fill="url(#envGrad)" stroke="#06b6d4" stroke-width="0.8" opacity="0.95"/>
-
-    <!-- Envelope flap -->
-    <path d="M-28,-16 L0,4 L28,-16" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-
-    <!-- Scan beam sweeping across envelope -->
-    <rect x="-30" y="-20" width="4" height="44" fill="url(#scanBeam)" opacity="0">
-      <animate attributeName="x" values="-34;30;-34" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0.7;0" dur="3s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
-    </rect>
-
-    <!-- Checkmark (verification complete indicator) -->
-    <circle cx="22" cy="14" r="8" fill="#10b981" opacity="0.9">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+    <circle cx="195" cy="18" r="3" fill="#10b981">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <path d="M18,14 L21,17 L26,11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 
-    <!-- Octahedron crest (rotating wireframe) -->
-    <g transform="translate(0,-42)" opacity="0.6">
-      <polygon points="0,-10 8,0 0,10 -8,0" fill="none" stroke="#06b6d4" stroke-width="0.8">
-        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
-      </polygon>
+  <!-- 5. Right HUD Telemetry Console -->
+  <g transform="translate(730, 140)">
+    <!-- Terminal Outer Frame -->
+    <path d="M 210 0 L 20 0 L 0 20 L 0 160 L 20 180 L 210 180 Z" fill="rgba(10, 16, 32, 0.65)" stroke="rgba(99, 102, 241, 0.28)" stroke-width="1"/>
+    <path d="M 210 0 L 175 0" stroke="#6366f1" stroke-width="2.5"/>
+    <path d="M 210 0 L 210 35" stroke="#6366f1" stroke-width="2.5"/>
+    <path d="M 0 145 L 0 160 L 20 180 L 35 180" stroke="#6366f1" stroke-width="1.5" fill="none"/>
+
+    <!-- Header Tag -->
+    <rect x="188" y="10" width="8" height="8" rx="1" fill="#6366f1"/>
+    <text x="180" y="18" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#a5b4fc" letter-spacing="1.5">ML_SPECIFICATION</text>
+    <line x1="15" y1="26" x2="198" y2="26" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+    <!-- Telemetry Lines -->
+    <text x="196" y="46" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">CLASSIFIER_CORE</text>
+    <text x="196" y="58" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#e2e8f0">LOGISTIC REGRESSION</text>
+
+    <text x="196" y="80" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">FEATURE_SPACE</text>
+    <text x="196" y="92" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8">FEATURE_UNION (65K)</text>
+
+    <text x="196" y="114" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">SUBWORD_N_GRAMS</text>
+    <text x="196" y="126" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#818cf8">CHAR_WB [3-5] L2</text>
+
+    <text x="196" y="148" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">VALIDATION_STATUS</text>
+    <text x="196" y="160" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#10b981">10/10 TEST CASES OK</text>
+
+    <circle cx="15" cy="18" r="3" fill="#6366f1">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 6. TOP BRAND HEADER -->
+  <g transform="translate(500, 48)">
+    <rect x="-140" y="-18" width="280" height="26" rx="13" fill="rgba(6, 182, 212, 0.08)" stroke="rgba(6, 182, 212, 0.25)" stroke-width="0.8"/>
+    <circle cx="-118" cy="-5" r="4" fill="#06b6d4">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="-106" y="-1" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="2">AEGISMAIL THREAT ENGINE</text>
+    <rect x="100" y="-9" width="22" height="9" rx="2" fill="#10b981" opacity="0.8"/>
+    <text x="111" y="-2" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#040711">v1.0</text>
+  </g>
+
+  <!-- 7. CENTRAL FLOATING 3D COMPOSITION -->
+  <g transform="translate(500, 224)">
+    <!-- Bobbing Float Animation -->
+    <animateTransform attributeName="transform" type="translate" values="500,224; 500,214; 500,224" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+
+    <!-- Orbital Ring 1 (Tilted 3D Cyan Ellipse) -->
+    <g transform="rotate(-22)">
+      <ellipse cx="0" cy="0" rx="190" ry="72" fill="none" stroke="#06b6d4" stroke-width="1.2" stroke-dasharray="8 14" opacity="0.45" filter="url(#bloomSubtle)">
+        <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="28s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Orbital Node 1 -->
+      <circle cx="190" cy="0" r="3.5" fill="#38bdf8" filter="url(#bloomIntense)">
+        <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="28s" repeatCount="indefinite"/>
+      </circle>
     </g>
 
-    <!-- Orbiting dot 1 -->
-    <circle cx="0" cy="0" r="2.5" fill="#06b6d4" filter="url(#particleGlow)">
-      <animateMotion dur="6s" repeatCount="indefinite" path="M0,-80 A80,30 0 1,1 0.1,-80 Z"/>
-      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="6s" repeatCount="indefinite"/>
-    </circle>
+    <!-- Orbital Ring 2 (Counter-tilted 3D Indigo Ellipse) -->
+    <g transform="rotate(32)">
+      <ellipse cx="0" cy="0" rx="215" ry="80" fill="none" stroke="#6366f1" stroke-width="1" stroke-dasharray="6 12" opacity="0.38">
+        <animateTransform attributeName="transform" type="rotate" values="360; 0" dur="34s" repeatCount="indefinite"/>
+      </ellipse>
+      <!-- Orbital Node 2 -->
+      <circle cx="215" cy="0" r="3" fill="#a5b4fc" filter="url(#bloomIntense)">
+        <animateTransform attributeName="transform" type="rotate" values="360; 0" dur="34s" repeatCount="indefinite"/>
+      </circle>
+    </g>
 
-    <!-- Orbiting dot 2 -->
-    <circle cx="0" cy="0" r="2" fill="#6366f1" filter="url(#particleGlow)">
-      <animateMotion dur="8s" repeatCount="indefinite" path="M0,85 A85,35 0 1,0 0.1,85 Z"/>
-      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="8s" repeatCount="indefinite"/>
-    </circle>
+    <!-- Outer Holographic Target Ring -->
+    <circle cx="0" cy="0" r="145" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 6"/>
+    <circle cx="0" cy="0" r="130" fill="none" stroke="rgba(6,182,212,0.18)" stroke-width="1"/>
 
-    <!-- Orbiting dot 3 -->
-    <circle cx="0" cy="0" r="1.8" fill="#10b981" filter="url(#particleGlow)">
-      <animateMotion dur="10s" repeatCount="indefinite" path="M75,0 A75,40 0 1,1 74.9,0 Z"/>
-      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="10s" repeatCount="indefinite"/>
-    </circle>
+    <!-- Shield Outer Aura Glow -->
+    <path d="M 0 -82 L 64 -52 C 64 -10, 64 32, 0 88 C -64 32, -64 -10, -64 -52 Z" fill="none" stroke="url(#hudGlow)" stroke-width="3" filter="url(#bloomIntense)" opacity="0.6">
+      <animate attributeName="opacity" values="0.35;0.8;0.35" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Main Metallic Defense Shield Body -->
+    <path d="M 0 -76 L 58 -48 C 58 -10, 58 30, 0 80 C -58 30, -58 -10, -58 -48 Z" fill="url(#shieldMetal)" stroke="url(#shieldRim)" stroke-width="2" filter="url(#bloomSubtle)"/>
+
+    <!-- Inner Shield Depth Shading -->
+    <path d="M 0 -68 L 48 -44 C 48 -8, 48 24, 0 68 C -48 24, -48 -8, -48 -44 Z" fill="rgba(6, 11, 25, 0.65)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+
+    <!-- Holographic Digital Email Node (3D Isometric Bevel) -->
+    <g transform="translate(0, 4)">
+      <!-- Envelope Body Plate -->
+      <rect x="-38" y="-24" width="76" height="48" rx="4" fill="url(#mailSurface)" stroke="#06b6d4" stroke-width="1.4" filter="url(#bloomSubtle)"/>
+      <!-- Inner Envelope Lining -->
+      <rect x="-35" y="-21" width="70" height="42" rx="2" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+
+      <!-- Envelope Flap Crease -->
+      <path d="M -38 -24 L 0 4 L 38 -24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M -38 24 L -10 -2" fill="none" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+      <path d="M 38 24 L 10 -2" fill="none" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+
+      <!-- AI Scanning Laser Sweep (Moving Left to Right) -->
+      <g opacity="0.85">
+        <rect x="-42" y="-30" width="8" height="60" fill="url(#laserBeam)">
+          <animate attributeName="x" values="-46; 38; -46" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+          <animate attributeName="opacity" values="0.1; 0.95; 0.1" dur="3.2s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+
+      <!-- Center Shield Crest Emissary (Rotating Octahedron) -->
+      <g transform="translate(0, 3)" opacity="0.85">
+        <polygon points="0,-12 9,0 0,12 -9,0" fill="none" stroke="#38bdf8" stroke-width="1.2">
+          <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="10s" repeatCount="indefinite"/>
+        </polygon>
+        <circle cx="0" cy="0" r="3" fill="#10b981" filter="url(#bloomSubtle)">
+          <animate attributeName="r" values="2.5; 4.2; 2.5" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+
+    <!-- Verified Clean Security Badge (Bottom Right Anchor) -->
+    <g transform="translate(36, 44)">
+      <circle cx="0" cy="0" r="13" fill="#040711" stroke="#10b981" stroke-width="1.8" filter="url(#bloomSubtle)"/>
+      <circle cx="0" cy="0" r="10" fill="#10b981" opacity="0.25">
+        <animate attributeName="opacity" values="0.15; 0.45; 0.15" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Checkmark -->
+      <path d="M -5 0 L -1 4 L 6 -3" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
   </g>
 
-  <!-- Title: AegisMail -->
-  <text x="500" y="50" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="6" fill="#64748b" text-transform="uppercase">AI-POWERED EMAIL SECURITY</text>
+  <!-- 8. FOOTER BANNER / SPECIFICATION TAGLINE -->
+  <g transform="translate(500, 396)">
+    <line x1="-360" y1="0" x2="360" y2="0" stroke="url(#hudGlow)" stroke-width="0.75" opacity="0.4"/>
+    <rect x="-180" y="-12" width="360" height="24" rx="12" fill="#060b17" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    <text x="0" y="4" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1">
+      MULTI-SCALE NLP &bull; ADVERSARIAL DEFENSE &bull; INTERACTIVE 3D CORE
+    </text>
+  </g>
 
-  <!-- Bottom tagline -->
-  <text x="500" y="355" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#64748b" letter-spacing="1">Multi-Scale NLP Classification • Adversarial Defense • Real-Time 3D Visualization</text>
-
-  <!-- Subtle bottom line -->
-  <line x1="350" y1="375" x2="650" y2="375" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
+  <!-- Bottom Accent Coordinates -->
+  <text x="50" y="440" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#475569">NODE_ENV: PRODUCTION // STANDALONE_WEB_ML + FASTAPI</text>
+  <text x="950" y="440" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#475569">LATENCY: &lt;10MS // PRIVACY_BY_DESIGN</text>
 </svg>
