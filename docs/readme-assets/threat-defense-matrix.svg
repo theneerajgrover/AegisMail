@@ -71,14 +71,14 @@
     <text x="26" y="98" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#fecdd3">"cl@1m ur fr33 c@rd n0w!"</text>
 
     <!-- Conventional Filter Result -->
-    <text x="18" y="130" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ef4444">&times; Standard Filters: BYPASSED (0 hits)</text>
+    <text x="18" y="130" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ef4444">&#215; Standard Filters: BYPASSED (0 hits)</text>
 
     <!-- AegisMail Defense Box -->
     <rect x="16" y="145" width="261" height="85" rx="6" fill="rgba(6, 182, 212, 0.06)" stroke="rgba(6, 182, 212, 0.22)" stroke-width="0.8"/>
-    <text x="26" y="165" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#38bdf8">&check; AEGISMAIL CANONICALIZATION:</text>
+    <text x="26" y="165" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#38bdf8">&#10003; AEGISMAIL CANONICALIZATION:</text>
     <text x="26" y="185" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#67e8f9">"claim your free card now!"</text>
-    <text x="26" y="204" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&bull; Char-wb subword features (3-5 ngrams)</text>
-    <text x="26" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&bull; Evasion tokens counted: 4 &rarr; 98.8% Spam</text>
+    <text x="26" y="204" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&#8226; Char-wb subword features (3-5 ngrams)</text>
+    <text x="26" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&#8226; Evasion tokens counted: 4 &#8594; 98.8% Spam</text>
   </g>
 
   <!-- ==================== COLUMN 2: BAYESIAN POISONING ==================== -->
@@ -99,14 +99,14 @@
     <text x="26" y="105" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#fecdd3">words of Wikipedia academic text]"</text>
 
     <!-- Conventional Filter Result -->
-    <text x="18" y="130" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ef4444">&times; Standard Filters: DILUTED (Scores Safe)</text>
+    <text x="18" y="130" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ef4444">&#215; Standard Filters: DILUTED (Scores Safe)</text>
 
     <!-- AegisMail Defense Box -->
     <rect x="16" y="145" width="261" height="85" rx="6" fill="rgba(99, 102, 241, 0.06)" stroke="rgba(99, 102, 241, 0.22)" stroke-width="0.8"/>
-    <text x="26" y="165" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#a5b4fc">&check; MULTI-SCALE SEGMENT SCAN:</text>
-    <text x="26" y="185" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#c7d2fe">Doc: 12% &bull; Seg 1: 99.7% &bull; Seg 2: 2%</text>
-    <text x="26" y="204" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&bull; Max-pool override: triggers if &ge;88%</text>
-    <text x="26" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&bull; Padding discarded &rarr; 99.68% Scam</text>
+    <text x="26" y="165" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#a5b4fc">&#10003; MULTI-SCALE SEGMENT SCAN:</text>
+    <text x="26" y="185" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#c7d2fe">Doc: 12% &#8226; Seg 1: 99.7% &#8226; Seg 2: 2%</text>
+    <text x="26" y="204" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&#8226; Max-pool override: triggers if &#8805;88%</text>
+    <text x="26" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&#8226; Padding discarded &#8594; 99.68% Scam</text>
   </g>
 
   <!-- ==================== COLUMN 3: PHISHING LURES ==================== -->
@@ -127,13 +127,13 @@
     <text x="26" y="105" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#fecdd3">Click here to view urgent document."</text>
 
     <!-- Conventional Filter Result -->
-    <text x="18" y="130" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ef4444">&times; Standard Filters: FALSE CLEAN (No bad words)</text>
+    <text x="18" y="130" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ef4444">&#215; Standard Filters: FALSE CLEAN (No bad words)</text>
 
     <!-- AegisMail Defense Box -->
     <rect x="16" y="145" width="261" height="85" rx="6" fill="rgba(16, 185, 129, 0.06)" stroke="rgba(16, 185, 129, 0.22)" stroke-width="0.8"/>
-    <text x="26" y="165" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#34d399">&check; HEURISTIC &amp; INTENT RECOGNITION:</text>
+    <text x="26" y="165" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#34d399">&#10003; HEURISTIC &amp; INTENT RECOGNITION:</text>
     <text x="26" y="185" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#a7f3d0">Shared drive pattern + credential urgency</text>
-    <text x="26" y="204" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&bull; Flags: drive link, urgency, unverified sender</text>
-    <text x="26" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&bull; Intent pattern matched &rarr; 95.27% Scam</text>
+    <text x="26" y="204" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&#8226; Flags: drive link, urgency, unverified sender</text>
+    <text x="26" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">&#8226; Intent pattern matched &#8594; 95.27% Scam</text>
   </g>
 </svg>

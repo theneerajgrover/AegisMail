@@ -40,7 +40,7 @@
   <!-- Top Title -->
   <g transform="translate(30, 26)">
     <circle cx="6" cy="6" r="4" fill="#06b6d4"/>
-    <text x="18" y="10" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8" letter-spacing="1.5">THREE.JS (r128) WEBGL HOLOGRAPHIC MAIL NODE &bull; DYNAMIC STATE MACHINE</text>
+    <text x="18" y="10" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8" letter-spacing="1.5">THREE.JS (r128) WEBGL HOLOGRAPHIC MAIL NODE &#8226; DYNAMIC STATE MACHINE</text>
   </g>
 
   <!-- 4 State Cards (Width: 220 each, Gap: 20, Total: 4*220 + 3*20 = 940, Start X = 30) -->
@@ -66,7 +66,7 @@
 
     <!-- Description -->
     <text x="110" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#f1f5f9">Standby Ambient Float</text>
-    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#67e8f9">0x06b6d4 &bull; Cyan Ambient</text>
+    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#67e8f9">0x06b6d4 &#8226; Cyan Ambient</text>
     <text x="110" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#94a3b8">Interactive mouse-drag tilt</text>
   </g>
 
@@ -92,7 +92,7 @@
 
     <!-- Description -->
     <text x="110" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#f1f5f9">Multi-Axis Acceleration</text>
-    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#a5b4fc">0x6366f1 &bull; Indigo Pulse</text>
+    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#a5b4fc">0x6366f1 &#8226; Indigo Pulse</text>
     <text x="110" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#94a3b8">Threat heuristic extraction</text>
   </g>
 
@@ -118,7 +118,7 @@
 
     <!-- Description -->
     <text x="110" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#f1f5f9">Stable Protective Aura</text>
-    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#34d399">0x10b981 &bull; Emerald Shield</text>
+    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#34d399">0x10b981 &#8226; Emerald Shield</text>
     <text x="110" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#94a3b8">Clean integrity telemetry</text>
   </g>
 
@@ -143,7 +143,7 @@
 
     <!-- Description -->
     <text x="110" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#f1f5f9">Crimson Threat Pulse</text>
-    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#f43f5e">0xf43f5e &bull; Crimson Alert</text>
+    <text x="110" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#f43f5e">0xf43f5e &#8226; Crimson Alert</text>
     <text x="110" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" fill="#94a3b8">Emissive intensity elevated</text>
   </g>
 </svg>

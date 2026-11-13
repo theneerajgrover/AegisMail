@@ -13,7 +13,7 @@
   <rect width="800" height="52" rx="8" fill="url(#hbg_14)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
   <rect x="0" y="0" width="4.5" height="52" rx="2" fill="url(#acc_14)"/>
   <text x="24" y="21" font-family="'JetBrains Mono', 'Segoe UI Mono', monospace" font-size="9" font-weight="700" fill="#f43f5e" letter-spacing="2.5">14</text>
-  <text x="50" y="21" font-family="'JetBrains Mono', monospace" font-size="9" fill="#475569" letter-spacing="2">&mdash;</text>
+  <text x="50" y="21" font-family="'JetBrains Mono', monospace" font-size="9" fill="#475569" letter-spacing="2">&#8212;</text>
   <text x="68" y="21" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#94a3b8" letter-spacing="2">DETECTION SHOWCASE</text>
   <text x="24" y="40" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f1f5f9" letter-spacing="-0.01em">Live Application Telemetry Across Real Attack Vectors</text>
 </svg>
